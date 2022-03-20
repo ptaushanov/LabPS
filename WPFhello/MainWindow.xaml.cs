@@ -27,12 +27,18 @@ namespace WPFhello
 
         private void handleBtnClick(object sender, RoutedEventArgs e)
         {
-            string inputMessage = txtName.Text;
+            string inputMessage = "";
 
-            if (inputMessage.Length < 2)
+            foreach (var item in myGrid.Children)
             {
-                MessageBox.Show("Името трябва да съдържа поне 2 символа");
-                return;
+                if (item is TextBox)
+                {
+                    TextBox textBox = (TextBox)item;
+                    string name = textBox.Text;
+
+                    inputMessage += name;
+                    inputMessage += " ";
+                }
             }
 
             MessageBox.Show("Здрасти " + inputMessage);

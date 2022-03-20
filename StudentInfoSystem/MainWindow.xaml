@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentInfoSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Студенска информационна система" Height="450" Width="800">
+    <Grid x:Name="mainGrid">
+        <GroupBox Header="Студентска информация" Margin="14,193,10,0" FontFamily="Cascadia Code" BorderBrush="#FF282828" Height="203" VerticalAlignment="Top"/>
+
+        <GroupBox Header="Лични данни" Margin="14,33,10,0" FontFamily="Cascadia Code" BorderBrush="#FF282828" Height="155" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Margin="110,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+        <Label Content="Име" HorizontalAlignment="Left" Margin="40,76,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="59"/>
+        <TextBox x:Name="txtMiddleName" HorizontalAlignment="Left" Margin="110,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+        <Label Content="Презиме" HorizontalAlignment="Left" Margin="40,103,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Margin="110,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="40,130,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold"/>
+        <Label Content="Специалност" HorizontalAlignment="Left" Margin="40,255,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="94"/>
+        <TextBox x:Name="txtSpecialty" Margin="148,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20" HorizontalAlignment="Left" Width="220"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="40,195,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold"/>
+        <Label Content="ОКС" HorizontalAlignment="Left" Margin="40,284,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
+        <TextBox x:Name="txtQualificationLevel" Margin="148,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20" HorizontalAlignment="Left" Width="220"/>
+        <Label Content="Статус" HorizontalAlignment="Left" Margin="40,314,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
+        <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Margin="148,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+        <Label Content="Фак.номер" HorizontalAlignment="Left" Margin="40,343,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
+        <TextBox x:Name="txtFacultyNumber" HorizontalAlignment="Left" Margin="148,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+        <Label Content="Факултет" HorizontalAlignment="Left" Margin="40,229,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
+        <TextBox x:Name="txtFaculty" HorizontalAlignment="Left" Margin="148,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+        <Label Content="Курс" HorizontalAlignment="Left" Margin="518,230,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
+        <TextBox x:Name="txtCourse" HorizontalAlignment="Left" Margin="608,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+        <Label Content="Поток" HorizontalAlignment="Left" Margin="518,255,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
+        <TextBox x:Name="txtStream" HorizontalAlignment="Left" Margin="608,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+        <Label Content="Група" HorizontalAlignment="Left" Margin="518,281,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
+        <TextBox x:Name="txtGroup" HorizontalAlignment="Left" Margin="608,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+        <Button x:Name="btnShowUser" Content="Покажи потребител" HorizontalAlignment="Left" Margin="353,10,0,0" VerticalAlignment="Top" Height="28" Width="140" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleShowTestStudent"/>
+        <Button x:Name="btnShowUser_Copy" Content="Изчисти" HorizontalAlignment="Left" Margin="498,10,0,0" VerticalAlignment="Top" Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxClearAll"/>
+        <Button x:Name="btnShowUser_Copy1" Content="Забрани" HorizontalAlignment="Left" Margin="597,10,0,0" VerticalAlignment="Top" Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxDisabled"/>
+        <Button x:Name="btnShowUser_Copy2" Content="Отбрани" HorizontalAlignment="Left" Margin="696,10,0,0" VerticalAlignment="Top" Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxEnabled"/>
+
     </Grid>
 </Window>
