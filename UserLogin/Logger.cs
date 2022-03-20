@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Linq;
 
 namespace UserLogin
 {
-    static internal class Logger
+    static public class Logger
     {
         static private List<string> currentSessionActivities = new List<string>();
         private const string logFilePath = "log.txt";
@@ -25,29 +26,29 @@ namespace UserLogin
             }
         }
 
-        static public void GetCurrentSessionActivities()
+        static public IEnumerable<string> GetCurrentSessionActivities(string filter)
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (string activityLine in currentSessionActivities)
-            {
-                stringBuilder.Append(activityLine);
-            }
-            Console.WriteLine(stringBuilder.ToString());
+            List<string> filteredActivities =
+                (from activity in currentSessionActivities
+                 where activity.Contains(filter)
+                 select activity).ToList();
+
+            return filteredActivities;
         }
 
-        static public void ShowLogFileActivities()
+        static public IEnumerable<string> ShowLogFileActivities()
         {
             StreamReader reader = new StreamReader(logFilePath);
-            StringBuilder stringBuilder = new StringBuilder();
+            List<string> lines = new List<string>();
 
             while (!reader.EndOfStream)
             {
                 string line = reader.ReadLine();
-                stringBuilder.AppendLine(line);
+                lines.Add(line);
             }
 
-            Console.WriteLine(stringBuilder.ToString());
             reader.Close();
+            return lines;
         }
 
         public delegate void Callback(string removedLine);

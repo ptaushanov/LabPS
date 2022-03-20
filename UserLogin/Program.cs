@@ -110,11 +110,22 @@ namespace UserLogin
                     break;
 
                 case 4:
-                    Logger.ShowLogFileActivities();
+                    IEnumerable<string> activities = Logger.ShowLogFileActivities();
+                    activities.ToList().ForEach(activity => Console.WriteLine(activity));
                     break;
 
                 case 5:
-                    Logger.GetCurrentSessionActivities();
+                    Console.Write("Филтър: ");
+                    string filter = Console.ReadLine();
+                    IEnumerable<string> currentSessionActivities = Logger.GetCurrentSessionActivities(filter);
+                    StringBuilder stringBuilder = new StringBuilder();
+
+                    foreach (string activityLine in currentSessionActivities)
+                    {
+                        stringBuilder.Append(activityLine);
+                    }
+
+                    Console.WriteLine(stringBuilder.ToString());
                     break;
 
                 case 6:
