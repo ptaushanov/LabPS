@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserLogin", "UserLogin\User
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentInfoSystem", "StudentInfoSystem\StudentInfoSystem.csproj", "{08F5C4F5-C13C-4007-B8C0-F03F53B27D9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFhello", "WPFhello\WPFhello.csproj", "{6501F7FA-72B5-47EB-9D36-B8044EB7DFF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{08F5C4F5-C13C-4007-B8C0-F03F53B27D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08F5C4F5-C13C-4007-B8C0-F03F53B27D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08F5C4F5-C13C-4007-B8C0-F03F53B27D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6501F7FA-72B5-47EB-9D36-B8044EB7DFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6501F7FA-72B5-47EB-9D36-B8044EB7DFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6501F7FA-72B5-47EB-9D36-B8044EB7DFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6501F7FA-72B5-47EB-9D36-B8044EB7DFF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
