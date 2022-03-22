@@ -20,6 +20,7 @@ namespace StudentInfoSystem
     /// </summary>
     public partial class MainWindow : Window
     {
+        static private bool testModeOn = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -81,5 +82,26 @@ namespace StudentInfoSystem
             handleFillTextBoxData(testStudent);
         }
 
+        private void handeleTextModeOn(object sender, RoutedEventArgs e)
+        {
+            if (testModeOn)
+            {
+                btnTestMode.Visibility = Visibility.Hidden;
+                btnShowUser.Visibility = Visibility.Hidden;
+                btnClear.Visibility = Visibility.Hidden;
+                btnDisable.Visibility = Visibility.Hidden;
+                btnEnable.Visibility = Visibility.Hidden;
+                return;
+            }
+
+            testModeOn = true;
+            btnTestMode.Content = "Излез от тестов режим";
+
+            btnShowUser.Visibility = Visibility.Visible;
+            btnClear.Visibility = Visibility.Visible;
+            btnDisable.Visibility = Visibility.Visible;
+            btnEnable.Visibility = Visibility.Visible;
+
+        }
     }
 }
