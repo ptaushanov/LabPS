@@ -31,6 +31,8 @@ namespace WPFhello
 
             peopleListBox.Items.Add(james);
             peopleListBox.Items.Add(david);
+
+            peopleListBox.SelectedItem = james;
         }
 
         private void handleBtnClick(object sender, RoutedEventArgs e)
@@ -77,9 +79,14 @@ namespace WPFhello
             lblPow.Content = Math.Pow(x, y).ToString();
         }
 
-        private void peopleListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
+        private void handleShowName(object sender, RoutedEventArgs e)
+        {
+            string greeting = (peopleListBox.SelectedValue as ListBoxItem).Content.ToString();
+            MessageBox.Show("Hi " + greeting);
+
+            MyMessage anotherWindow = new MyMessage();
+            anotherWindow.Show();
         }
     }
 }

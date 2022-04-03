@@ -23,11 +23,12 @@
         <Label x:Name="lblName_Copy" Content="Име:" Margin="0,0,438,173" FontFamily="Cascadia Code" FontWeight="Bold" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="38"/>
         <TextBox x:Name="txtName2" HorizontalAlignment="Right" Margin="0,0,318,144" TextWrapping="Wrap" Width="120" FontFamily="Cascadia Code" FontSize="16" BorderBrush="#FF2E2E2E" RenderTransformOrigin="0.46,-4.362" Height="21" VerticalAlignment="Bottom"/>
         <Label x:Name="lblName_Copy1" Content="Име:" Margin="0,0,438,144" FontFamily="Cascadia Code" FontWeight="Bold" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="38"/>
-        <ListBox x:Name="peopleListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="104,0,0,49" SelectionChanged="peopleListBox_SelectionChanged" RenderTransformOrigin="0.403,0.507" HorizontalAlignment="Left" Width="100" Height="107" VerticalAlignment="Bottom">
+        <ListBox x:Name="peopleListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="104,0,0,49" RenderTransformOrigin="0.403,0.507" HorizontalAlignment="Left" Width="100" Height="107" VerticalAlignment="Bottom">
             <ListBoxItem Content="Mike"/>
             <ListBoxItem Content="Mary"/>
             <ListBoxItem Content="Lisa"/>
             <ListBoxItem Content="John"/>
         </ListBox>
+        <Button x:Name="nameSelectBTN" Content="GO" HorizontalAlignment="Left" Margin="130,0,0,25" Width="48" BorderBrush="White" Background="#FF20ACB6" FontFamily="Cascadia Code" FontSize="11" Click="handleShowName" Height="19" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
