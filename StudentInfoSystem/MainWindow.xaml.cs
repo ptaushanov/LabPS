@@ -24,16 +24,30 @@ namespace StudentInfoSystem
         public MainWindow()
         {
             InitializeComponent();
+
+            btnShowUser.Visibility = Visibility.Hidden;
+            btnClear.Visibility = Visibility.Hidden;
+            btnDisable.Visibility = Visibility.Hidden;
+            btnEnable.Visibility = Visibility.Hidden;
+        }
+
+        private void clearTextBox(object item)
+        {
+            if (item is TextBox)
+            {
+                ((TextBox)item).Text = String.Empty;
+            }
         }
 
         private void handleTextBoxClearAll(object sender, RoutedEventArgs e)
         {
-            foreach (var item in mainGrid.Children)
+            foreach (var item in gridStudentInfo.Children)
             {
-                if (item is TextBox)
-                {
-                    ((TextBox)item).Text = String.Empty;
-                }
+                clearTextBox(item);
+            }
+            foreach (var item in gridPersonalDetails.Children)
+            {
+                clearTextBox(item);
             }
         }
 
@@ -54,25 +68,37 @@ namespace StudentInfoSystem
             txtGroup.Text = student.group.ToString();
         }
 
+        private void toggleTextBox(object item, bool isEnabled)
+        {
+            if (item is TextBox)
+            {
+                ((TextBox)item).IsEnabled = isEnabled;
+            }
+        }
+
         private void handleTextBoxDisabled(object sender, RoutedEventArgs e)
         {
-            foreach (var item in mainGrid.Children)
+            foreach (var item in gridStudentInfo.Children)
             {
-                if (item is TextBox)
-                {
-                    ((TextBox)item).IsEnabled = false;
-                }
+                toggleTextBox(item, false);
+            }
+
+            foreach (var item in gridPersonalDetails.Children)
+            {
+                toggleTextBox(item, false);
             }
         }
 
         private void handleTextBoxEnabled(object sender, RoutedEventArgs e)
         {
-            foreach (var item in mainGrid.Children)
+            foreach (var item in gridStudentInfo.Children)
             {
-                if (item is TextBox)
-                {
-                    ((TextBox)item).IsEnabled = true;
-                }
+                toggleTextBox(item, true);
+            }
+
+            foreach (var item in gridPersonalDetails.Children)
+            {
+                toggleTextBox(item, true);
             }
         }
 

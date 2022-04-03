@@ -8,17 +8,18 @@
         Title="Студенска информационна система" Height="480" Width="800">
     <Grid x:Name="mainGrid" Margin="20">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
 
-        <GroupBox Grid.Row="0" Grid.Column="0" Height="240" VerticalAlignment="Top" Header="Студентска информация" FontFamily="Cascadia Code" BorderBrush="#FF282828">
-            <Grid>
+        <GroupBox Grid.Row="0" Grid.Column="0" Margin="10" Padding="10" Header="Студентска информация" FontFamily="Cascadia Code" BorderBrush="#FF282828">
+            <Grid x:Name="gridStudentInfo">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
@@ -31,7 +32,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBox Grid.Row="0" Grid.Column="0" x:Name="txtFirstName" HorizontalAlignment="Left" Margin="120 8 8 8" TextWrapping="Wrap" Width="235" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
-                <Label Grid.Row="0" Grid.Column="0" Content="Име" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold" Width="59"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Име" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
 
                 <TextBox Grid.Row="1" Grid.Column="0" x:Name="txtMiddleName" HorizontalAlignment="Left" Margin="120 8 8 8" TextWrapping="Wrap" Width="235" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
                 <Label Grid.Row="1" Grid.Column="0" Content="Презиме" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
@@ -41,48 +42,65 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Header="Лични данни" FontFamily="Cascadia Code" BorderBrush="#FF282828">
-            <Grid>
+        <GroupBox Grid.Row="1" Grid.Column="0" Margin="10" Padding="10" Header="Лични данни" FontFamily="Cascadia Code" BorderBrush="#FF282828">
+            <Grid x:Name="gridPersonalDetails">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Content="Специалност" HorizontalAlignment="Left" Margin="40,255,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="94"/>
-                <TextBox Grid.Row="0" Grid.Column="0" x:Name="txtSpecialty" Margin="148,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20" HorizontalAlignment="Left" Width="220"/>
+                <TextBox Grid.Row="0" Grid.Column="0" x:Name="txtSpecialty" HorizontalAlignment="Left" Margin="120 0 0 0" TextWrapping="Wrap" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Специалност" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
 
-                <Label Grid.Row="1" Grid.Column="0" Content="ОКС" HorizontalAlignment="Left" Margin="40,284,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
-                <TextBox Grid.Row="1" Grid.Column="0" x:Name="txtQualificationLevel" Margin="148,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20" HorizontalAlignment="Left" Width="220"/>
+                <TextBox Grid.Row="1" Grid.Column="0" x:Name="txtQualificationLevel" HorizontalAlignment="Left" Margin="120 0 0 0" TextWrapping="Wrap" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="ОКС" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
 
-                <Label Grid.Row="2" Grid.Column="0" Content="Статус" HorizontalAlignment="Left" Margin="40,314,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
-                <TextBox Grid.Row="2" Grid.Column="0" x:Name="txtStatus" HorizontalAlignment="Left" Margin="148,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <TextBox Grid.Row="2" Grid.Column="0" x:Name="txtStatus" HorizontalAlignment="Left" Margin="120 0 0 0" TextWrapping="Wrap" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="Статус" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
 
-                <Label Grid.Row="3" Grid.Column="0" Content="Фак.номер" HorizontalAlignment="Left" Margin="40,343,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
-                <TextBox Grid.Row="3" Grid.Column="0" x:Name="txtFacultyNumber" HorizontalAlignment="Left" Margin="148,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <TextBox Grid.Row="3" Grid.Column="0" x:Name="txtFacultyNumber" HorizontalAlignment="Left" Margin="120 0 0 0" TextWrapping="Wrap" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <Label Grid.Row="3" Grid.Column="0" Content="Фак.номер" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
 
-                <Label Grid.Row="4" Grid.Column="0" Content="Факултет" HorizontalAlignment="Left" Margin="40,229,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
-                <TextBox Grid.Row="4" Grid.Column="0" x:Name="txtFaculty" HorizontalAlignment="Left" Margin="148,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <TextBox Grid.Row="4" Grid.Column="0" x:Name="txtFaculty" HorizontalAlignment="Left" Margin="120 0 0 0" TextWrapping="Wrap" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <Label Grid.Row="4" Grid.Column="0" Content="Факултет" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
 
-                <Label Content="Курс" HorizontalAlignment="Left" Margin="518,230,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
-                <TextBox x:Name="txtCourse" HorizontalAlignment="Left" Margin="608,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
-                <Label Content="Поток" HorizontalAlignment="Left" Margin="518,255,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
-                <TextBox x:Name="txtStream" HorizontalAlignment="Left" Margin="608,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
-                <Label Content="Група" HorizontalAlignment="Left" Margin="518,281,0,0" VerticalAlignment="Top" FontFamily="Cascadia Code" FontWeight="Bold" Width="85"/>
-                <TextBox x:Name="txtGroup" HorizontalAlignment="Left" Margin="608,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtCourse"  HorizontalAlignment="Right" TextWrapping="Wrap" Width="125" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <Label Grid.Row="0" Grid.Column="1" Content="Курс" HorizontalAlignment="Right" Margin="0 0 150 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
+
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtStream" HorizontalAlignment="Right" TextWrapping="Wrap" Width="125" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <Label Grid.Row="1" Grid.Column="1" Content="Поток" HorizontalAlignment="Right" Margin="0 0 150 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
+
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtGroup" HorizontalAlignment="Right" TextWrapping="Wrap" Width="125" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <Label Grid.Row="2" Grid.Column="1" Content="Група" HorizontalAlignment="Right" Margin="0 0 150 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
             </Grid>
         </GroupBox>
 
-        <Button x:Name="btnShowUser" Content="Покажи потребител" HorizontalAlignment="Left" Margin="353,10,0,0" VerticalAlignment="Top" Height="28" Width="140" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleShowTestStudent" Visibility="Hidden"/>
-        <Button x:Name="btnClear" Content="Изчисти" HorizontalAlignment="Left" Margin="498,10,0,0" VerticalAlignment="Top" Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxClearAll" Visibility="Hidden"/>
-        <Button x:Name="btnDisable" Content="Забрани" HorizontalAlignment="Left" Margin="597,10,0,0" VerticalAlignment="Top" Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxDisabled" Visibility="Hidden"/>
-        <Button x:Name="btnEnable" Content="Отбрани" Margin="696,10,10,0" VerticalAlignment="Top" Height="28" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxEnabled" Visibility="Hidden"/>
-        <Button x:Name="btnTestMode" Content="Влез в тестов режим" Margin="580,391,10,0" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handeleTextModeOn" Visibility="Visible" Height="28" VerticalAlignment="Top"/>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnShowUser" Content="Покажи потребител" Height="28" Width="140" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleShowTestStudent" />
+            <Button Grid.Column="1" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnClear" Content="Изчисти" Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxClearAll" />
+            <Button Grid.Column="2" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnDisable" Content="Забрани"  Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxDisabled" />
+            <Button Grid.Column="3" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnEnable" Content="Отбрани" Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxEnabled" />
+            <Button Grid.Column="4" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnTestMode" Content="Влез в тестов режим" Height="28" Width="160" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handeleTextModeOn"/>
+        </Grid>
 
     </Grid>
 </Window>
