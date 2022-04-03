@@ -23,6 +23,14 @@ namespace WPFhello
         public MainWindow()
         {
             InitializeComponent();
+            ListBoxItem james = new ListBoxItem();
+            ListBoxItem david = new ListBoxItem();
+
+            james.Content = "James";
+            david.Content = "David";
+
+            peopleListBox.Items.Add(james);
+            peopleListBox.Items.Add(david);
         }
 
         private void handleBtnClick(object sender, RoutedEventArgs e)
@@ -67,6 +75,11 @@ namespace WPFhello
             int.TryParse(txtY.Text, out y);
 
             lblPow.Content = Math.Pow(x, y).ToString();
+        }
+
+        private void peopleListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
