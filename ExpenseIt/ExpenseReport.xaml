@@ -7,6 +7,64 @@
         mc:Ignorable="d"
         Title="ExpenseIt - View Expense" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="watermark.png" />
+        </Grid.Background>
+
+        <Grid Grid.Row="0" Grid.Column="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Expense Report For:" FontSize="20"  FontWeight="Bold" Foreground="DarkBlue"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Content="Name:" FontSize="16"  FontWeight="Bold"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="{Binding Path=Name}" Margin="120 0 0 0" FontSize="16"  FontWeight="Bold"/>
+
+            <Label Grid.Row="2" Grid.Column="0" Content="Department:" FontSize="16"  FontWeight="Bold"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="{Binding Path=Department}" Margin="120 0 0 0" FontSize="16"  FontWeight="Bold"/>
+
+            <Grid Grid.Row="4" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Background="Indigo">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Content="Expence Type" FontSize="16" Foreground="White"/>
+                    <Label Grid.Column="1" Content="Amount" FontSize="16" Foreground="White"/>
+                </Grid>
+
+
+                <DataGrid AutoGenerateColumns="False" RowHeaderWidth="0" Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Path=Expenses}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ExpenseType" Binding="{Binding Path=ExpenseType}"/>
+                        <DataGridTextColumn Header="Amount"  Binding="{Binding Path=ExpenseAmount}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
