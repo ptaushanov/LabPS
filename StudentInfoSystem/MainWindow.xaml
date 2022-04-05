@@ -99,7 +99,7 @@
             <Button Grid.Column="1" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnClear" Content="Изчисти" Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxClearAll" />
             <Button Grid.Column="2" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnDisable" Content="Забрани"  Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxDisabled" />
             <Button Grid.Column="3" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnEnable" Content="Отбрани" Height="28" Width="94" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handleTextBoxEnabled" />
-            <Button Grid.Column="4" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnTestMode" Content="Влез в тестов режим" Height="28" Width="160" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handeleTextModeOn"/>
+            <Button Grid.Column="4" Grid.Row="0" Margin="10 0" HorizontalAlignment="Right" x:Name="btnTestMode" Content="Влез в тестов режим" Height="28" Width="160" Background="White" BorderBrush="#FF303030" FontFamily="Cascadia Code" Click="handeleTestModeOn"/>
         </Grid>
 
     </Grid>

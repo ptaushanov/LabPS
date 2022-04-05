@@ -18,7 +18,17 @@ namespace StudentInfoSystem
                 "Bachelor",
                 "заверил",
                 "121230140",
-                2, 17, 43)
+                2, 17, 43),
+
+            new Student("Kircho",
+                "Todorov",
+                "Petkov",
+                "FKST",
+                "KSI",
+                "Bachelor",
+                "заверил",
+                "121219080",
+                2, 17, 43),
         };
 
     }

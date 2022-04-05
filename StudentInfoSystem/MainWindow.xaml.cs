@@ -31,6 +31,15 @@ namespace StudentInfoSystem
             btnEnable.Visibility = Visibility.Hidden;
         }
 
+        public MainWindow(object data, bool turnOnTestMode) : this()
+        {
+            if (turnOnTestMode)
+            {
+                handeleTestModeOn();
+            }
+            handleFillTextBoxData(data as Student);
+        }
+
         private void clearTextBox(object item)
         {
             if (item is TextBox)
@@ -108,7 +117,7 @@ namespace StudentInfoSystem
             handleFillTextBoxData(testStudent);
         }
 
-        private void handeleTextModeOn(object sender, RoutedEventArgs e)
+        private void handeleTestModeOn()
         {
             if (testModeOn)
             {
@@ -129,5 +138,11 @@ namespace StudentInfoSystem
             btnEnable.Visibility = Visibility.Visible;
 
         }
+
+        private void handeleTestModeOn(object sender, RoutedEventArgs e)
+        {
+            handeleTestModeOn();
+        }
+
     }
 }

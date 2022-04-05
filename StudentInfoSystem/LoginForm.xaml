@@ -1,0 +1,42 @@
+﻿<Window x:Class="StudentInfoSystem.LoginForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentInfoSystem"
+        mc:Ignorable="d"
+        Title="LoginForm" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Вход" FontSize="35" FontFamily="Cascadia Code" Padding="20" Margin="0 60 0 0" HorizontalAlignment="Center"/>
+        <Grid Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Петребителско име" FontSize="18" FontFamily="Cascadia Code" Margin="0 0 10 0" HorizontalAlignment="Right"/>
+            <TextBox x:Name="usernameTextBox" Grid.Column="1" Height="28" Width="250" FontSize="16" HorizontalAlignment="Left"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="2" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Парола" FontSize="18" FontFamily="Cascadia Code" Margin="0 0 10 0" HorizontalAlignment="Right"/>
+            <PasswordBox x:Name="passwordPasswordBox" Grid.Column="1" Height="28" Width="250" FontSize="16" HorizontalAlignment="Left"/>
+        </Grid>
+
+        <Button Grid.Column="0" Grid.Row="3" x:Name="btnLogin" Content="Влез" Width="180" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top"  BorderBrush="Black" FontSize="20" FontWeight="Bold" Background="White" BorderThickness="2" Click="handleGoToLogin" />
+    </Grid>
+</Window>

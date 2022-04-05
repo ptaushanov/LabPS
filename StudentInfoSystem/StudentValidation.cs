@@ -10,7 +10,7 @@ namespace StudentInfoSystem
 {
     internal class StudentValidation
     {
-        Student GetStudentDataByUser(User user)
+        public Student GetStudentDataByUser(User user)
         {
             if (String.IsNullOrEmpty(user.facultyNumber))
             {

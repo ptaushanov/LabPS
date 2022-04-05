@@ -1,0 +1,31 @@
+﻿<Window x:Class="StudentInfoSystem.TestMode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentInfoSystem"
+        mc:Ignorable="d"
+        Title="TestMode" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Влезте в тестов режим?" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30" FontFamily="Cascadia Code"/>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnTestModeYes" Grid.Column="0" Grid.Row="0" Content="Да" Width="200" Height="60" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 20 20 0" BorderBrush="Black" FontSize="20" FontWeight="Bold" Background="White" BorderThickness="2" Click="handleEnterTestMode"/>
+            <Button x:Name="btnTestModeNo" Grid.Column="1" Grid.Row="0" Content="He" Width="200" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 20 0 0"  BorderBrush="Black" FontSize="20" FontWeight="Bold" Background="White" BorderThickness="2" Click="handleGoToLogin" />
+        </Grid>
+    </Grid>
+</Window>
