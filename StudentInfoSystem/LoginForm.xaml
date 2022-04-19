@@ -25,7 +25,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Петребителско име" FontSize="18" FontFamily="Cascadia Code" Margin="0 0 10 0" HorizontalAlignment="Right"/>
-            <TextBox x:Name="usernameTextBox" Grid.Column="1" Height="28" Width="250" FontSize="16" HorizontalAlignment="Left"/>
+            <TextBox x:Name="usernameTextBox" Grid.Column="1" Height="28" Width="250" FontSize="16" HorizontalAlignment="Left" Text="{Binding Username}"/>
         </Grid>
 
         <Grid Grid.Column="0" Grid.Row="2" VerticalAlignment="Top">
@@ -34,9 +34,9 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Парола" FontSize="18" FontFamily="Cascadia Code" Margin="0 0 10 0" HorizontalAlignment="Right"/>
-            <PasswordBox x:Name="passwordPasswordBox" Grid.Column="1" Height="28" Width="250" FontSize="16" HorizontalAlignment="Left"/>
+            <TextBox x:Name="passwordPasswordBox" Grid.Column="1" Height="28" Width="250" FontSize="16" HorizontalAlignment="Left" Text="{Binding Password}"/>
         </Grid>
 
-        <Button Grid.Column="0" Grid.Row="3" x:Name="btnLogin" Content="Влез" Width="180" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top"  BorderBrush="Black" FontSize="20" FontWeight="Bold" Background="White" BorderThickness="2" Click="handleGoToLogin" />
+        <Button Command="{Binding LoginCommand}" CommandParameter="{Binding .}" Grid.Column="0" Grid.Row="3" x:Name="btnLogin" Content="Влез" Width="180" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top"  BorderBrush="Black" FontSize="20" FontWeight="Bold" Background="White" BorderThickness="2" />
     </Grid>
 </Window>
