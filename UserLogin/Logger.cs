@@ -13,7 +13,18 @@ namespace UserLogin
 
         static public void LogActivity(string activity)
         {
-            string activityLine = DateTime.Now + ";"
+            DateTime now = DateTime.Now;
+
+            LogContext context = new LogContext();
+            context.Logs.Add(new Log(
+                now, LoginValidation.currentUserUsername,
+                LoginValidation.currentUserRole,
+                activity)
+            );
+
+            context.SaveChangesAsync();
+
+            string activityLine = now + ";"
             + LoginValidation.currentUserUsername + ";"
             + LoginValidation.currentUserRole + ";"
             + activity + Environment.NewLine;

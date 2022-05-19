@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace StudentInfoSystem
 {
@@ -21,14 +24,67 @@ namespace StudentInfoSystem
     public partial class MainWindow : Window
     {
         static private bool testModeOn = false;
+        public List<string> StudStatusChoices { get; set; } = new List<string>();
+
+        private void FillStudStatusChoices()
+        {
+            using (IDbConnection connection = new
+            SqlConnection(Properties.Settings.Default.DbConnect))
+            {
+                string sqlquery =
+                @"SELECT StatusDescr
+                FROM StudStatus";
+                IDbCommand command = new SqlCommand();
+                command.Connection = connection;
+                connection.Open();
+                command.CommandText = sqlquery;
+                IDataReader reader = command.ExecuteReader();
+                bool notEndOfResult;
+                notEndOfResult = reader.Read();
+                while (notEndOfResult)
+                {
+                    string s = reader.GetString(0);
+                    StudStatusChoices.Add(s);
+                    notEndOfResult = reader.Read();
+                }
+            }
+        }
+
+        private bool TestStudentsIfEmpty()
+        {
+            StudentInfoContext context = new StudentInfoContext();
+            IEnumerable<Student> queryStudents = context.Students;
+
+            int countStudents = queryStudents.Count();
+            return !(countStudents > 0);
+        }
+
+        private void CopyTestStudents()
+        {
+            StudentInfoContext context = new StudentInfoContext();
+            foreach (Student student in StudentData.TestStudents)
+            {
+                context.Students.Add(student);
+            }
+
+            context.SaveChanges();
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+            FillStudStatusChoices();
+            this.DataContext = this;
 
             btnShowUser.Visibility = Visibility.Hidden;
             btnClear.Visibility = Visibility.Hidden;
             btnDisable.Visibility = Visibility.Hidden;
             btnEnable.Visibility = Visibility.Hidden;
+
+            if (TestStudentsIfEmpty())
+            {
+                CopyTestStudents();
+            }
         }
 
         public MainWindow(object data, bool turnOnTestMode) : this()
@@ -62,19 +118,19 @@ namespace StudentInfoSystem
 
         public void handleFillTextBoxData(Student student)
         {
-            txtFirstName.Text = student.firstName;
-            txtMiddleName.Text = student.middleName;
-            txtLastName.Text = student.lastName;
+            txtFirstName.Text = student.FirstName;
+            txtMiddleName.Text = student.MiddleName;
+            txtLastName.Text = student.LastName;
 
-            txtFaculty.Text = student.faculty;
-            txtSpecialty.Text = student.specialty;
-            txtQualificationLevel.Text = student.qualificationLevel;
-            txtStatus.Text = student.status;
-            txtFacultyNumber.Text = student.facultyNumber;
+            txtFaculty.Text = student.Faculty;
+            txtSpecialty.Text = student.Specialty;
+            txtQualificationLevel.Text = student.QualificationLevel;
+            //txtStatus.Text = student.status;
+            txtFacultyNumber.Text = student.FacultyNumber;
 
-            txtCourse.Text = student.course.ToString();
-            txtStream.Text = student.stream.ToString();
-            txtGroup.Text = student.group.ToString();
+            txtCourse.Text = student.Course.ToString();
+            txtStream.Text = student.Stream.ToString();
+            txtGroup.Text = student.Group.ToString();
         }
 
         private void toggleTextBox(object item, bool isEnabled)

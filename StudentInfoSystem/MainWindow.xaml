@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentInfoSystem"
+        xml:lang="bg"
         mc:Ignorable="d"
         Title="Студенска информационна система" Height="480" Width="800">
     <Grid x:Name="mainGrid" Margin="20">
@@ -63,7 +64,7 @@
                 <TextBox Grid.Row="1" Grid.Column="0" x:Name="txtQualificationLevel" HorizontalAlignment="Left" Margin="120 0 0 0" TextWrapping="Wrap" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
                 <Label Grid.Row="1" Grid.Column="0" Content="ОКС" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
 
-                <TextBox Grid.Row="2" Grid.Column="0" x:Name="txtStatus" HorizontalAlignment="Left" Margin="120 0 0 0" TextWrapping="Wrap" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>
+                <ListBox  Grid.Row="2" Grid.Column="0" Margin="120 0 0 0" ItemsSource="{Binding StudStatusChoices}" />
                 <Label Grid.Row="2" Grid.Column="0" Content="Статус" HorizontalAlignment="Left" Padding="10 0 0 0" VerticalContentAlignment="Center" FontFamily="Cascadia Code" FontWeight="Bold"/>
 
                 <TextBox Grid.Row="3" Grid.Column="0" x:Name="txtFacultyNumber" HorizontalAlignment="Left" Margin="120 0 0 0" TextWrapping="Wrap" Width="220" BorderBrush="#FF2C2C2C" FontFamily="Cascadia Code" Height="20"/>

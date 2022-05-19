@@ -12,6 +12,11 @@ namespace UserLogin
         {
             Console.OutputEncoding = Encoding.UTF8;
 
+            if (TestUsersIfEmpty())
+            {
+                CopyTestUsers();
+            }
+
             Console.Write("Enter username: ");
             string username = Console.ReadLine();
             Console.Write("Enter password: ");
@@ -22,10 +27,10 @@ namespace UserLogin
 
             if (loginValidation.ValidateUserInput(ref user))
             {
-                Console.WriteLine(user.username);
-                Console.WriteLine(user.password);
-                Console.WriteLine(user.facultyNumber);
-                Console.WriteLine((UserRoles)user.role);
+                Console.WriteLine(user.Username);
+                Console.WriteLine(user.Password);
+                Console.WriteLine(user.FacultyNumber);
+                Console.WriteLine((UserRoles)user.Role);
                 Console.WriteLine(user.Created.ToString());
                 Console.WriteLine(user.ActivUntil.ToString());
 
@@ -52,6 +57,26 @@ namespace UserLogin
                         break;
                 }
             }
+        }
+
+        static private bool TestUsersIfEmpty()
+        {
+            UserContext context = new UserContext();
+            IEnumerable<User> usersQuery = context.Users;
+            int usersCount = usersQuery.Count();
+
+            return !(usersCount > 0);
+        }
+
+        static private void CopyTestUsers()
+        {
+            UserContext context = new UserContext();
+            foreach (User user in UserData.TestUsers)
+            {
+                context.Users.Add(user);
+            }
+
+            context.SaveChanges();
         }
 
         static private void PrintErrorMessage(string errorMsg)

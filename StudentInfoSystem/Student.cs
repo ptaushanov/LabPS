@@ -8,17 +8,18 @@ namespace StudentInfoSystem
 {
     public class Student
     {
-        public string firstName;
-        public string middleName;
-        public string lastName;
-        public string faculty;
-        public string specialty;
-        public string qualificationLevel;
-        public string status;
-        public string facultyNumber;
-        public int course;
-        public int stream;
-        public int group;
+        public int StudentId { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public string Faculty { get; set; }
+        public string Specialty { get; set; }
+        public string QualificationLevel { get; set; }
+        public string Status { get; set; }
+        public string FacultyNumber { get; set; }
+        public int Course { get; set; }
+        public int Stream { get; set; }
+        public int Group { get; set; }
 
         public Student()
         {
@@ -38,17 +39,17 @@ namespace StudentInfoSystem
             int group
             )
         {
-            this.firstName = firstName;
-            this.middleName = middleName;
-            this.lastName = lastName;
-            this.faculty = faculty;
-            this.specialty = specialty;
-            this.qualificationLevel = qualificationLevel;
-            this.status = status;
-            this.facultyNumber = facultyNumber;
-            this.course = course;
-            this.stream = stream;
-            this.group = group;
+            FirstName = firstName;
+            MiddleName = middleName;
+            LastName = lastName;
+            Faculty = faculty;
+            Specialty = specialty;
+            QualificationLevel = qualificationLevel;
+            Status = status;
+            FacultyNumber = facultyNumber;
+            Course = course;
+            Stream = stream;
+            Group = group;
         }
     }
 }

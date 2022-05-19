@@ -31,5 +31,16 @@ namespace StudentInfoSystem
                 2, 17, 43),
         };
 
+        static public Student IsThereStudent(string facultyNumber)
+        {
+            StudentInfoContext context = new StudentInfoContext();
+
+            Student result = (from st in context.Students
+                              where st.FacultyNumber == facultyNumber
+                              select st).FirstOrDefault();
+
+            return result;
+        }
+
     }
 }

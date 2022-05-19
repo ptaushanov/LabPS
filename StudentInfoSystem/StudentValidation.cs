@@ -12,7 +12,7 @@ namespace StudentInfoSystem
     {
         public Student GetStudentDataByUser(User user)
         {
-            if (String.IsNullOrEmpty(user.facultyNumber))
+            if (String.IsNullOrEmpty(user.FacultyNumber))
             {
                 Console.WriteLine("Даденият потребител няма факултетен номер");
                 return null;
@@ -20,7 +20,7 @@ namespace StudentInfoSystem
             else
             {
                 Student foundStudent = (from student in StudentData.TestStudents
-                                        where student.facultyNumber == user.facultyNumber
+                                        where student.FacultyNumber == user.FacultyNumber
                                         select student).FirstOrDefault();
 
                 if (foundStudent == null)

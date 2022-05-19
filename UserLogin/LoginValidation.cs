@@ -67,8 +67,8 @@ namespace UserLogin
                 return false;
             }
 
-            currentUserRole = (UserRoles)user.role;
-            currentUserUsername = user.username;
+            currentUserRole = (UserRoles)user.Role;
+            currentUserUsername = user.Username;
 
             Logger.LogActivity("Успешен Login");
             return true;
